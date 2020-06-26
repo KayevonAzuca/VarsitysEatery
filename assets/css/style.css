@@ -267,7 +267,6 @@ input {
 	flex: 0 0 48%;
 	position: relative;
 	margin: 2px 2px;
-	border: 1px solid #000;
 	border-radius: 10px;
 }
 .tile__featured-foods:hover {
@@ -474,7 +473,7 @@ input {
 	flex-wrap: nowrap;
 }
 .form__one-rating {
-	flex: 0 0 33%;
+	flex: 0 0 23%;
 	text-align: left;
 	font-size: 0.8em;
 }
@@ -493,14 +492,8 @@ input {
 	flex-direction: column;
 	flex: 0 0 95%;
 }
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-	font-size: 0.7em;
-}
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-	font-size: 0.7em;
-}
-::-ms-input-placeholder { /* Microsoft Edge */
-	font-size: 0.7em;
+::placeholder {
+	font-size: 0.8em;
 }
 .form__btn {
 	text-align: center;

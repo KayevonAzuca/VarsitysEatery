@@ -10,17 +10,17 @@
             <section class="showcase">
                 <h2 class="showcase__title">Contact Us Form</h2>
                 <div class="content">
-                <?php
-                    $e;
-                    $d;
-                    if(isset($_GET['uEr'])){
-                        $e = $_GET['uEr'];
-                        echo '<h3 class="critical-text">You did not fill in the necessary fields!</h3>';
-                    }
-                    if(isset($_GET['uIn'])){
-                        $d = $_GET['uIn'];
-                    }
-                ?>
+                    <?php
+                        $e;
+                        $d;
+                        if(isset($_GET['uEr'])){
+                            $e = $_GET['uEr'];
+                            echo '<h3 class="critical-text">You did not fill in the necessary fields!</h3>';
+                        }
+                        if(isset($_GET['uIn'])){
+                            $d = $_GET['uIn'];
+                        }
+                    ?>
                     <form class="form" id="contactForm" action="/validateForm.php" method="POST">
                         <fieldset class="form__personal">
                             <legend class="form__legend">Personal Information</legend>
@@ -103,29 +103,29 @@
                             <?php
                                 if(isset($e)){
                                     if(in_array('noCustMessage', $e)){
-                                        echo '<textarea class="form__textarea critical-background" name="custMessage" rows="5" cols="22" maxlength="128" placeholder="For example, Tell us about your experience at our eatery and/or about our website">' . $d['custMessage'] . '</textarea>';
+                                        echo '<textarea class="form__textarea critical-background" name="custMessage" rows="5" cols="22" maxlength="256" placeholder="For example, Tell us about your experience at our eatery and/or about our website">' . $d['custMessage'] . '</textarea>';
                                         echo '<p class="critical-text">*Please enter your message.</p>';
                                     } elseif(in_array('lenCustMessage', $e)){
-                                        echo '<textarea class="form__textarea critical-background" name="custMessage" rows="5" cols="22" maxlength="128" placeholder="Example: Tell us about your experience at our eatery and/or about our website">' . $d['custMessage'] . '</textarea>';
+                                        echo '<textarea class="form__textarea critical-background" name="custMessage" rows="5" cols="22" maxlength="256" placeholder="Example: Tell us about your experience at our eatery and/or about our website">' . $d['custMessage'] . '</textarea>';
                                         echo '<p class="critical-text">*Message too long.</p>';
                                     } else {
-                                        echo '<textarea class="form__textarea" name="custMessage" rows="5" cols="22" maxlength="128" placeholder="Example: Tell us about your experience at our eatery and/or about our website">' . $d['custMessage'] . '</textarea>';
+                                        echo '<textarea class="form__textarea" name="custMessage" rows="5" cols="22" maxlength="256" placeholder="Example: Tell us about your experience at our eatery and/or about our website">' . $d['custMessage'] . '</textarea>';
                                     }
                                 } else {
-                                    echo '<textarea class="form__textarea" name="custMessage" rows="5" cols="22" maxlength="128" placeholder="Example: Tell us about your experience at our eatery and/or about our website"></textarea>';
+                                    echo '<textarea class="form__textarea" name="custMessage" rows="5" cols="22" maxlength="256" placeholder="Example: Tell us about your experience at our eatery and/or about our website"></textarea>';
                                 }
                             ?>
                             </label>
                             <label class="form__label">
                                 <span class="form__question">Rate our eatery</span>
                                 <div class="form__rating">
-                                <?php
-                                    if(isset($e)){
-                                        echo '<input class="form__slider" id="formSlider" onchange="showSliderVal(this.value)" name="rating" type="range" value="' . $d['rating'] . '" min="1" max="10">';
-                                    } else {
-                                        echo '<input class="form__slider" id="formSlider" onchange="showSliderVal(this.value)" name="rating" type="range" value="' . $d['rating'] . '" min="1" max="10">';
-                                    }
-                                ?>
+                                    <?php
+                                        if(isset($e)){
+                                            echo '<input class="form__slider" id="formSlider" onchange="showSliderVal(this.value)" name="rating" type="range" value="' . $d['rating'] . '" min="1" max="10">';
+                                        } else {
+                                            echo '<input class="form__slider" id="formSlider" onchange="showSliderVal(this.value)" name="rating" type="range" value="5" min="1" max="10">';
+                                        }
+                                    ?>
                                     <div class="form__values">
                                         <span class="form__one-rating">1</span>
                                         <?php

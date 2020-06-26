@@ -1,4 +1,11 @@
 <?php
+    $uErrors = array(
+        'uEr' => array()
+    );
+    $uData = array(
+        'uIn' => array()
+    );
+
     if(isset($_POST['submit'])){
         $name = $_POST['name'];
         $email = $_POST['email'];
@@ -9,14 +16,6 @@
         $returningCust = $_POST['returningCust'];
         $favCateg = $_POST['favCateg'];
 
-        $uErrors = array(
-            'uEr' => array()
-        );
-        $uData = array(
-            'uIn' => array(),
-            'uFavCategory' => array()
-        );
-        
         //Validate name
         if(empty($name)){
             array_push($uErrors['uEr'], 'noName');
@@ -54,8 +53,8 @@
         //Validate customer message
         if(empty($custMessage)){
             array_push($uErrors['uEr'], 'noCustMessage');
-        } elseif(strlen($custMessage) > 128){
-            array_push($uErrors["uEr"], 'lenCustMessage');
+        } elseif(strlen($custMessage) > 256){
+            array_push($uErrors['uEr'], 'lenCustMessage');
         }
 
         //Check if errors in $uErrors
@@ -68,6 +67,7 @@
             $uData['uIn']['custMessage'] = $custMessage;
             $uData['uIn']['rating'] = $rating;
             $uData['uIn']['returningCust'] = $returningCust;
+            // check if chk box is set
             $uData['uIn']['favCateg'] = $favCateg;
             */
             
@@ -90,7 +90,7 @@
             exit();
         }
     } else {
-        array_push($uErrors["uEr"], 'cheat');
+        array_push($uErrors['uEr'], 'cheat');
 
         $uErrors = http_build_query($uErrors);
         $uData = http_build_query($uData);
