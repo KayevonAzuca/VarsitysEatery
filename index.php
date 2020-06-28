@@ -1,14 +1,15 @@
 	<?php 
         $page = 'home';
-        $title = 'Varsity Eatery | Home';
-        $scripts = array();
+        $titleTag = 'Varsity Eatery | Home';
+		$scripts = array();
+		$message = 'Welcome to Varsity\'s Eatery Homepage! Feel free to check out our menu or learn more about us!';
         include('/usr/local/www/apache24/data/assets/php/include/header.php');
     ?>
     <main class="chamber">
     	<?php include('/usr/local/www/apache24/data/assets/php/include/sidebar.php');?>
         <article class="chamber__focal">
             <section class="showcase">
-            	<h2 class="showcase__title">Check out our best foods!</h2>
+				<h1 class="showcase__title">Home</h1>
             	<div class="content">
 	                <ul class="grid">
 	                    <li class="tile tile__featured-foods">

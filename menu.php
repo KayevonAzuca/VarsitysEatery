@@ -1,15 +1,15 @@
 	<?php 
         $page = 'menu';
-        $title = 'Varsity Eatery | Menu';
+        $titleTag = 'Varsity Eatery | Menu';
         $scripts = array('/assets/js/menu.js');
-        // 
+        $message = 'This is our current Menu at our eatery! Feel free to check out our menu or learn more about us!';
         include('/usr/local/www/apache24/data/assets/php/include/header.php');
     ?>
     <main class="chamber">
     	<?php include('/usr/local/www/apache24/data/assets/php/include/sidebar.php');?>
         <article class="chamber__focal">
             <section class="showcase">
-            	<h2 class="showcase__title">Menu</h2>
+                <h1 class="showcase__title">Menu</h1>
             	<div class="content">
                     <div class="menu">
                         <nav class="menu__nav" id="menuNav"></nav>

@@ -126,6 +126,14 @@ input {
 	height: 100%;
 	color: #000;
 }
+/* .antechamber__sign {
+	border: 2px solid brown;
+	background-color: #000;
+}
+.antechamber__message {
+	color: #fff;
+
+} */
 .antechamber__link--highlight {
 	background-color: #5b836e;
 	color: #fff;
@@ -150,6 +158,7 @@ input {
 	font-size: 1.1em;
 	background-color: rgb(126, 155, 139);
 	text-align: center;
+	padding: 1px 8px;
 }
 .content {
 	display: flex;

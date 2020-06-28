@@ -1,14 +1,15 @@
     <?php 
         $page = 'contact';
-        $title = 'Varsity Eatery | Contact';
+        $titleTag = 'Varsity Eatery | Contact';
         $scripts = array('/assets/js/contactUs.js');
+        $message = 'Questions, compliments, or concerns? Contact us by filling out the form below.';
         include('/usr/local/www/apache24/data/assets/php/include/header.php');
     ?>
     <main class="chamber">
         <?php include('/usr/local/www/apache24/data/assets/php/include/sidebar.php');?>
         <article class="chamber__focal">
             <section class="showcase">
-                <h2 class="showcase__title">Contact Us Form</h2>
+                <h1 class="showcase__title">Contact Us</h1>
                 <div class="content">
                     <?php
                         $e;

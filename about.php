@@ -1,17 +1,20 @@
     <?php 
         $page = 'about';
-        $title = 'Varsity Eatery | About';
-        $scripts = array();
+        $titleTag = 'Varsity Eatery | About';
+		$scripts = array();
+		$message = 'Get to know us a little here on our about page!';
         include('/usr/local/www/apache24/data/assets/php/include/header.php');
     ?>
     <main class="chamber">
     	<?php include('/usr/local/www/apache24/data/assets/php/include/sidebar.php');?>
         <article class="chamber__focal">
             <section class="showcase">
-            	<h2 class="showcase__title">About us</h2>
+            	<h1 class="showcase__title">About Us</h1>
             	<div class="content">
             		<div class="about-us">
-                    	<p class="about-us__info">Charbroiled burgers, sandwiches, soups, salads, mexican food, breakfast and more! In Anaheim since 2015, our eatery's goal is to offer the most satisfying foods  with our inexpensive menu. We provide a variety of foods so we hope you come eat at our place!</p>
+                    	<p class="about-us__info">Charbroiled burgers, sandwiches, soups, salads, mexican food, breakfast and more! 
+						In Anaheim since 2015, our eatery's goal is to offer the most satisfying foods  with our inexpensive menu. 
+						We provide a variety of foods so we hope you come eat at our place!</p>
                    	</div>
 	            </div>
             </section>

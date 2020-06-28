@@ -1,10 +1,15 @@
-<!doctype html>
-	<?php include('/usr/local/www/apache24/data/assets/php/include/header.php');?>
+    <?php 
+        $page = 'pripol';
+        $titleTag = 'Varsity Eatery | Terms and Conditions';
+        $scripts = array();
+        $message = '';
+        include('/usr/local/www/apache24/data/assets/php/include/header.php');
+    ?>
     <main class="chamber">
     	<?php include('/usr/local/www/apache24/data/assets/php/include/sidebar.php');?>
         <article class="chamber__focal">
             <section class="showcase">
-            	<h2 class="showcase__title">Privacy Policy</h2>
+            	<h1 class="showcase__title">Privacy Policy</h1>
             	<div class="content doc">
                     <p>
                     Varsity's Eatery operates the www.varsityseatery.com website, which provides the SERVICE.

@@ -1,10 +1,16 @@
-<!doctype html>
-	<?php include('/usr/local/www/apache24/data/assets/php/include/header.php');?>
+    <?php 
+        $page = 'tnc';
+        $titleTag = 'Varsity Eatery | Terms and Conditions';
+        $scripts = array();
+        $message = '';
+        $h1Tag = 'Terms and Conditions';
+        include('/usr/local/www/apache24/data/assets/php/include/header.php');
+    ?>
     <main class="chamber">
     	<?php include('/usr/local/www/apache24/data/assets/php/include/sidebar.php');?>
         <article class="chamber__focal">
             <section class="showcase">
-            	<h2 class="showcase__title">Terms and Conditions</h2>
+            	<h1 class="showcase__title">Terms and Conditions</h1>
             	<div class="content doc">
                     <p>
                     Welcome to Varsity's Eatery!
