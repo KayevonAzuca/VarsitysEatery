@@ -1,100 +1,120 @@
 <?php
-    $uErrors = array(
-        'uEr' => array()
-    );
     $uData = array(
-        'uIn' => array()
+        'uIn' => array(),
+        'uEr' => array()
     );
 
     if(isset($_POST['submit'])){
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $phoneNum = $_POST['phoneNum'];
-        $favFood = $_POST['favFood'];
-        $custMessage = $_POST['custMessage'];
-        $rating = $_POST['rating'];
-        $returningCust = $_POST['returningCust'];
-        $favCateg = $_POST['favCateg'];
+        $name = $_POST['name']; // text
+        $email = $_POST['email']; // email
+        $phoneNum = $_POST['phoneNum']; // tel
+        $persFavFood = $_POST['persFavFood']; // text
+        $custMessage = $_POST['custMessage']; // textarea
+        $rating = $_POST['rating']; // range
+        $visitAgain = $_POST['visitAgain']; // radio
+        $favCateg = $_POST['favCateg']; // checkboxe
 
-        //Validate name
+        // Required values before uploading
+
+        // Validate name
         if(empty($name)){
-            array_push($uErrors['uEr'], 'noName');
+            array_push($uData['uEr'], 'noName');
         } elseif(!preg_match("/^[a-zA-Z]*$/", $name)){
-            array_push($uErrors["uEr"], 'notName');
+            array_push($uData["uEr"], 'notName');
         } elseif(strlen($name) > 18){
-            array_push($uErrors["uEr"], 'lenName');
+            array_push($uData["uEr"], 'lenName');
         }
 
-        //Validate email
+        // Add name to $uData if it was given
+        if(!in_array('noName', $uData['uEr'])){
+            $uData['uIn']['name'] = $name;
+        }
+
+        // Validate email
         if(empty($email)){
-            array_push($uErrors['uEr'], 'noEmail');
+            array_push($uData['uEr'], 'noEmail');
         } elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-            array_push($uErrors["uEr"], 'notEmail');
+            array_push($uData["uEr"], 'notEmail');
         }
 
-        //Validate phone number
-        if(!empty($phoneNum)){
-            if(!preg_match("/^[0-9]*$/", $phoneNum)){
-                array_push($uErrors["uEr"], 'notPhNum');
-            } elseif(strlen($phoneNum) !== 10){
-                array_push($uErrors["uEr"], 'lenPhNum');
-            }
+        // Add email to $uData if it was given
+        if(!in_array('noEmail', $uData['uEr'])){
+            $uData['uIn']['email'] = $email;
         }
 
-        //Validate personal favorite food
-        if(!empty($favFood)){
-            if(!preg_match("/^[a-zA-z0-9]*$/", $favFood)){
-                array_push($uErrors["uEr"], 'notFood');
-            } elseif(strlen($favFood) > 12){
-                array_push($uErrors["uEr"], 'lenFood');
-            }
-        }
-
-        //Validate customer message
+        // Validate customer message
         if(empty($custMessage)){
-            array_push($uErrors['uEr'], 'noCustMessage');
+            array_push($uData['uEr'], 'noCustMessage');
         } elseif(strlen($custMessage) > 256){
-            array_push($uErrors['uEr'], 'lenCustMessage');
+            array_push($uData['uEr'], 'lenCustMessage');
         }
 
-        //Check if errors in $uErrors
-        if(empty($uErrors['uEr'])){
-            $uData['uIn']['name'] = $name;
-            /*
-            $uData['uIn']['email'] = $email;
-            $uData['uIn']['phoneNum'] = $phoneNum;
-            $uData['uIn']['favFood'] = $favFood;
+        // Add customer message to $uData if it was given
+        if(!in_array('noCustMessage', $uData['uEr'])){
             $uData['uIn']['custMessage'] = $custMessage;
+        }
+
+        // Values not required for upload
+        // Only validate if value was given
+
+        // Validate phone number
+        if(empty($phoneNum) && empty($uData['uEr'])){ // Add phone to $uData if it was given
+            $uData['uIn']['phoneNum'] = NULL;
+        } elseif(!empty($phoneNum)) { // Validate
+            if(!preg_match("/^[0-9]*$/", $phoneNum)){
+                array_push($uData["uEr"], 'notPhNum');
+            } elseif(strlen($phoneNum) !== 10){
+                array_push($uData["uEr"], 'lenPhNum');
+            }
+            $uData['uIn']['phoneNum'] = $phoneNum;
+        }
+
+        // Validate personal favorite food
+        if(empty($persFavFood) && empty($uData['uEr'])){ // Add personal favorite food to $uData if it was given
+            $uData['uIn']['persFavFood'] = NULL;
+        } elseif(!empty($persFavFood)) { // Validate
+            if(!preg_match("/^[a-zA-Z]*$/", $persFavFood)){
+                array_push($uData["uEr"], 'notFood');
+            } elseif(strlen($persFavFood) > 12){
+                array_push($uData["uEr"], 'lenFood');
+            }
+            $uData['uIn']['persFavFood'] = $persFavFood;
+        }
+
+        // Validate rating
+        if($rating >= 1 && $rating <= 10){
             $uData['uIn']['rating'] = $rating;
-            $uData['uIn']['returningCust'] = $returningCust;
-            // check if chk box is set
-            $uData['uIn']['favCateg'] = $favCateg;
-            */
-            
-            $uData = http_build_query($uData);
-            header("Location: /submitted.php?$uData");
-            exit();
         } else {
-            $uData['uIn']['name'] = $name;
-            $uData['uIn']['email'] = $email;
-            $uData['uIn']['phoneNum'] = $phoneNum;
-            $uData['uIn']['favFood'] = $favFood;
-            $uData['uIn']['custMessage'] = $custMessage;
-            $uData['uIn']['rating'] = $rating;
-            $uData['uIn']['returningCust'] = $returningCust;
-            $uData['uIn']['favCateg'] = $favCateg;
+            array_push($uData["uEr"], 'uknRating');
+        }
+        
+        // Validate returning customer radio button
+        if($visitAgain == '' || $visitAgain == 'yes' || $visitAgain == 'maybe' || $visitAgain == 'no'){
+            $uData['uIn']['visitAgain'] = $visitAgain;
+        } else {
+            array_push($uData["uEr"], 'uknRetCust');
+        }
+        
+        // Validate category names
+        $uData['uIn']['favCateg'] = $favCateg;
 
-            $uErrors = http_build_query($uErrors);
+        // Check if errors in $uData
+        if(empty($uData['uEr'])){ // No errors found: upload to database
+            session_start();
+            $_SESSION['formSuccess'] = true;
+            $_SESSION['name'] = $name;
+
+            header("Location: /submitted.php");
+            exit();
+        } else { // Errors found: Prompt user to fix
             $uData = http_build_query($uData);
-            header("Location: /contact.php?$uErrors&$uData");
+            header("Location: /contact.php?$uData");
             exit();
         }
-    } else {
-        array_push($uErrors['uEr'], 'cheat');
-
-        $uErrors = http_build_query($uErrors);
+    } else { // User tried to directly on page without submitting a form
+        array_push($uData["uEr"], 'noForm');
         $uData = http_build_query($uData);
-        header("Location: /contact.php?$uErrors&$uData");
+        header("Location: /contact.php?$uData");
         exit();
     }
 ?>
