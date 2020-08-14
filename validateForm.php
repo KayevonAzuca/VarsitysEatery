@@ -98,7 +98,7 @@
         }
         
         // Validate returning customer radio button
-        if($visitAgain == '' || $visitAgain == 'yes' || $visitAgain == 'maybe' || $visitAgain == 'no'){
+        if($visitAgain == 'yes' || $visitAgain == 'maybe' || $visitAgain == 'no'){
             $uData['uIn']['visitAgain'] = $visitAgain;
         } else {
             array_push($uData["uEr"], 'uknRetCust');
@@ -113,15 +113,8 @@
             $_SESSION['formSuccess'] = TRUE;
             $_SESSION['fName'] = $fName;
 
-            include_once('assets/php/include/db/dbConnect.php');
-
-            $sql = "INSERT INTO ve_forms (fName, email, phoneNum, persFavFood, custMessage, rating, visitAgain, favCateg)
-            VALUES ('$fName', '$email', '$phoneNum', '$persFavFood', '$custMessage', '$rating', '$visitAgain', '$favCateg');";
-            mysqli_query($conn, $sql);
-
-            //mysqli_stmt_close();
-            mysqli_close($conn);
-
+            // mySQL database implementation...
+            
             header("Location: submitted.php");
             exit();
         } else { // Errors found: Prompt user to fix

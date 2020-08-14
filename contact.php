@@ -72,7 +72,11 @@
                                         echo '<input class="form__phone-number critical-background" type="tel"  name="phoneNum" maxlength="10" size="18" placeholder=" 7141234567" value=' . $d['phoneNum'] . '>';
                                         echo '<p class="critical-text">*Enter a 10 digit phone number.</p>';
                                     } else {
-                                        echo '<input class="form__phone-number" type="tel"  name="phoneNum" maxlength="10" size="18" placeholder=" 7141234567" value=' . $d['phoneNum'] . '>';
+                                        if(isset($d) && isset($d['phoneNum'])){
+                                            echo '<input class="form__phone-number" type="tel"  name="phoneNum" maxlength="10" size="18" placeholder=" 7141234567" value=' . $d['phoneNum'] . '>';
+                                        } else {
+                                            echo '<input class="form__phone-number" type="tel"  name="phoneNum" maxlength="10" size="18" placeholder=" 7141234567">';
+                                        }
                                     }
                                 } else {
                                     echo '<input class="form__phone-number" type="tel"  name="phoneNum" maxlength="10" size="18" placeholder=" 7141234567">';
@@ -89,7 +93,11 @@
                                         echo '<input class="form__favorite-food critical-background" type="text" name="persFavFood" maxlength="12" size="18" placeholder=" Lobster" value=' . $d['persFavFood'] . '>';
                                         echo '<p class="critical-text">*Food name too long.</p>';
                                     } else {
-                                        echo '<input class="form__favorite-food" type="text" name="persFavFood" maxlength="12" size="18" placeholder=" Lobster" value=' . $d['persFavFood'] . '>';
+                                        if(isset($d) && isset($d['persFavFood'])){
+                                            echo '<input class="form__favorite-food" type="text" name="persFavFood" maxlength="12" size="18" placeholder=" Lobster" value=' . $d['persFavFood'] . '>';
+                                        } else {
+                                            echo '<input class="form__favorite-food" type="text" name="persFavFood" maxlength="12" size="18" placeholder=" Lobster">';
+                                        }
                                     }
                                 } else {
                                     echo '<input class="form__favorite-food" type="text" name="persFavFood" maxlength="12" size="18" placeholder=" Lobster">';
@@ -104,13 +112,20 @@
                             <?php
                                 if(isset($e)){
                                     if(in_array('noCustMessage', $e)){
-                                        echo '<textarea class="form__textarea critical-background" name="custMessage" rows="5" cols="22" maxlength="256" placeholder="For example, Tell us about your experience at our eatery and/or about our website">' . $d['custMessage'] . '</textarea>';
+                                        echo '<textarea class="form__textarea critical-background" name="custMessage" rows="5" cols="22" maxlength="256" 
+                                        placeholder="For example, Tell us about your experience at our eatery and/or about our website">';
+                                        if(isset($d) && isset($d['custMessage'])){echo $d['custMessage'];}
+                                        echo '</textarea>';
                                         echo '<p class="critical-text">*Please enter your message.</p>';
                                     } elseif(in_array('lenCustMessage', $e)){
                                         echo '<textarea class="form__textarea critical-background" name="custMessage" rows="5" cols="22" maxlength="256" placeholder="Tell us about your experience at our eatery and/or about our website">' . $d['custMessage'] . '</textarea>';
                                         echo '<p class="critical-text">*Message too long.</p>';
                                     } else {
-                                        echo '<textarea class="form__textarea" name="custMessage" rows="5" cols="22" maxlength="256" placeholder="Tell us about your experience at our eatery and/or about our website">' . $d['custMessage'] . '</textarea>';
+                                        if(isset($d) && isset($d['custMessage'])){
+                                            echo '<textarea class="form__textarea" name="custMessage" rows="5" cols="22" maxlength="256" placeholder="Tell us about your experience at our eatery and/or about our website">' . $d['custMessage'] . '</textarea>';
+                                        } else {
+                                            echo '<textarea class="form__textarea" name="custMessage" rows="5" cols="22" maxlength="256" placeholder="Tell us about your experience at our eatery and/or about our website"></textarea>';
+                                        }
                                     }
                                 } else {
                                     echo '<textarea class="form__textarea" name="custMessage" rows="5" cols="22" maxlength="256" placeholder="Tell us about your experience at our eatery and/or about our website"></textarea>';
@@ -142,9 +157,23 @@
                             </label>
                             <span class="form__question">Would you come back here again?</span>
                             <div class="form__radio">
-                                <label class="form__label"><input type="radio" name="visitAgain" value="yes" <?php if(isset($e)){if($d['visitAgain'] == 'yes'){echo 'checked';}}?>>Yes!</label>
-                                <label class="form__label"><input type="radio" name="visitAgain" value="maybe" <?php if(isset($e)){if($d['visitAgain'] == 'maybe'){echo 'checked';}}?>>I would filp a coin...</label>
-                                <label class="form__label"><input type="radio" name="visitAgain" value="no" <?php if(isset($e)){if($d['visitAgain'] == 'no'){echo 'checked';}}?>>No!</label>
+                                <?php
+                                    if(isset($e) && in_array('uknRetCust', $e)){
+                                        echo '<label class="form__label"><input type="radio" name="visitAgain" value="yes">Yes!</label>';
+                                        echo '<label class="form__label"><input type="radio" name="visitAgain" value="maybe">I would filp a coin...</label>';
+                                        echo '<label class="form__label"><input type="radio" name="visitAgain" value="no">No!</label>';
+                                    } else {
+                                        echo '<label class="form__label"><input type="radio" name="visitAgain" value="yes" '; 
+                                        if(isset($e)){if($d['visitAgain'] == 'yes'){echo 'checked';}}
+                                        echo '>Yes!</label>';
+                                        echo '<label class="form__label"><input type="radio" name="visitAgain" value="maybe" ';
+                                        if(isset($e)){if($d['visitAgain'] == 'maybe'){echo 'checked';}}
+                                        echo '>I would filp a coin...</label>';
+                                        echo '<label class="form__label"><input type="radio" name="visitAgain" value="no" ';
+                                        if(isset($e)){if($d['visitAgain'] == 'no'){echo 'checked';}}
+                                        echo '>No!</label>';
+                                    }
+                                ?>
                             </div>
                         </fieldset>
                         <?php include('assets/php/include/contact/favEateryCategory.php');?>
