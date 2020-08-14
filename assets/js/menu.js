@@ -27,7 +27,7 @@ function displayDefaultPage(menu){
     }//end of else{}
 }//end of displayDefaultPage()
 
-//Display the menu categories.
+//Display the menu categories using the menu.json categories.
 function displayMenuCategories(menu){
     document.getElementById('menuNav').innerHTML = `
         <ul class="menu__list">
@@ -45,7 +45,7 @@ function displayMenuCategories(menu){
 function addCategoryEvent(menu){
     let categories = document.getElementsByClassName('menu__category');
     for(let i = 0; i< categories.length; i++){
-        categories[i].addEventListener('click', function (e) {
+        categories[i].addEventListener('click', function(e){
             displayCategoryData(e.target.innerText, menu);
         });
     }//end of for()
