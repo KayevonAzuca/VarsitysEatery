@@ -6,7 +6,32 @@
     "title": {
         "override": true,
         "data": "Varsity's Eatery"
-    },
+	},
+	"languages": {
+		"override": true,
+		"data": {
+			"primary": [
+				{
+					"language": "PHP",
+					"path": ".\/images\/repositories\/languages\/php.png"
+				}
+			],
+			"secondary": [
+				{
+					"language": "HTML",
+					"path": ".\/images\/repositories\/languages\/html.png"
+				},
+				{
+					"language": "CSS",
+					"path": ".\/images\/repositories\/languages\/css.png"
+				},
+				{
+					"language": "JS",
+					"path": ".\/images\/repositories\/languages\/javascript.png"
+				}
+			]
+		}
+	},
     "apis": {
         "override": true,
         "data": ["Google Maps API"]

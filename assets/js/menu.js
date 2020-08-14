@@ -33,15 +33,12 @@ function displayMenuCategories(menu){
         <ul class="menu__list">
             ${
                 menu.map(function(categories){
-                    return `
-                        <li class="menu__category">
-                            ${categories.category}
-                        </li>
-                    `
+                    return `<li class="menu__category">
+                                ${categories.category}
+                            </li>`
                 }).join('')
             }
-        </ul>
-    `;
+        </ul>`;
 }//end of displayMenuCategories()
 
 //Add the click event for each menu category.
@@ -70,33 +67,27 @@ function displayCategoryData(clickedCategory, menu){
             //Display category info
             let info = document.getElementsByClassName('menu__info');
             for(let j = 0; j < info.length; j++){
-                info[j].innerHTML = `
-                    ${menu[i].info}
-                `
+                info[j].innerHTML = `${menu[i].info}`
             }//end of for()
             //Display category title
-            document.getElementById('categoryTitle').innerHTML = `
-                    ${menu[i].category}
-                `
+            document.getElementById('categoryTitle').innerHTML = `${menu[i].category}`
             //Display category food items
-            document.getElementById('category').innerHTML = `
-            <ul class="category__list">
+            document.getElementById('category').innerHTML = 
+                `<ul class="category__list">
                 ${
                     menu[i].items.map(function(item){
                         return `
                             <li class="category__item">
                                 <img class="category__img" src="${item.imgPath}" alt="${item.alt}">
                                 <div class="category__details">
-                                    <h3 class="category__title">${item.name}</h3>
-                                    <p class="category__description">${item.description}</p>
-                                    <span class="category__price">$${formatPrice(item.price)}</span>
+                                <h3 class="category__title">${item.name}</h3>
+                                <p class="category__description">${item.description}</p>
+                                <span class="category__price">$${formatPrice(item.price)}</span>
                                 </div>
-                            </li>
-                        `
+                            </li>`
                     }).join('')
                 }
-                </ul>
-            `
+                </ul>`
             break;
         }//end of if()
     }//end of for()
@@ -112,7 +103,7 @@ function displayPageError(){
 
 //Get JSON file and execute functions once on page load
 async function displayMenu(){
-    let response = await fetch('/assets/json/menu.json');
+    let response = await fetch('assets/json/menu.json');
     response = await response.json();
     await displayMenuCategories(response);
     await displayDefaultPage(response);

@@ -1,33 +1,42 @@
 <?php
+    // Clean input from potential whitespace, quotes, &/or malicious code
+    // https://www.w3schools.com/php/php_form_validation.asp
+    function cleanInput($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
     $uData = array(
         'uIn' => array(),
         'uEr' => array()
     );
 
     if(isset($_POST['submit'])){
-        $name = $_POST['name']; // text
+        $fName = cleanInput($_POST['fName']); // text
         $email = $_POST['email']; // email
         $phoneNum = $_POST['phoneNum']; // tel
-        $persFavFood = $_POST['persFavFood']; // text
-        $custMessage = $_POST['custMessage']; // textarea
+        $persFavFood = cleanInput($_POST['persFavFood']); // text
+        $custMessage = cleanInput($_POST['custMessage']); // textarea
         $rating = $_POST['rating']; // range
         $visitAgain = $_POST['visitAgain']; // radio
-        $favCateg = $_POST['favCateg']; // checkboxe
+        $favCateg = $_POST['favCateg']; // checkbox
 
         // Required values before uploading
 
-        // Validate name
-        if(empty($name)){
-            array_push($uData['uEr'], 'noName');
-        } elseif(!preg_match("/^[a-zA-Z]*$/", $name)){
-            array_push($uData["uEr"], 'notName');
-        } elseif(strlen($name) > 18){
-            array_push($uData["uEr"], 'lenName');
+        // Validate first name
+        if(empty($fName)){
+            array_push($uData['uEr'], 'nofName');
+        } elseif(!preg_match("/^[a-zA-Z]*$/", $fName)){
+            array_push($uData["uEr"], 'notfName');
+        } elseif(strlen($fName) > 18){
+            array_push($uData["uEr"], 'lenfName');
         }
 
         // Add name to $uData if it was given
-        if(!in_array('noName', $uData['uEr'])){
-            $uData['uIn']['name'] = $name;
+        if(!in_array('nofName', $uData['uEr'])){
+            $uData['uIn']['fName'] = $fName;
         }
 
         // Validate email
@@ -101,20 +110,29 @@
         // Check if errors in $uData
         if(empty($uData['uEr'])){ // No errors found: upload to database
             session_start();
-            $_SESSION['formSuccess'] = true;
-            $_SESSION['name'] = $name;
+            $_SESSION['formSuccess'] = TRUE;
+            $_SESSION['fName'] = $fName;
 
-            header("Location: /submitted.php");
+            include_once('assets/php/include/db/dbConnect.php');
+
+            $sql = "INSERT INTO ve_forms (fName, email, phoneNum, persFavFood, custMessage, rating, visitAgain, favCateg)
+            VALUES ('$fName', '$email', '$phoneNum', '$persFavFood', '$custMessage', '$rating', '$visitAgain', '$favCateg');";
+            mysqli_query($conn, $sql);
+
+            //mysqli_stmt_close();
+            mysqli_close($conn);
+
+            header("Location: submitted.php");
             exit();
         } else { // Errors found: Prompt user to fix
             $uData = http_build_query($uData);
-            header("Location: /contact.php?$uData");
+            header("Location: contact.php?$uData");
             exit();
         }
     } else { // User tried to directly on page without submitting a form
         array_push($uData["uEr"], 'noForm');
         $uData = http_build_query($uData);
-        header("Location: /contact.php?$uData");
+        header("Location: contact.php?$uData");
         exit();
     }
 ?>
