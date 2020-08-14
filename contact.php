@@ -158,21 +158,15 @@
                             <span class="form__question">Would you come back here again?</span>
                             <div class="form__radio">
                                 <?php
-                                    if(isset($e) && in_array('uknRetCust', $e)){
-                                        echo '<label class="form__label"><input type="radio" name="visitAgain" value="yes">Yes!</label>';
-                                        echo '<label class="form__label"><input type="radio" name="visitAgain" value="maybe">I would filp a coin...</label>';
-                                        echo '<label class="form__label"><input type="radio" name="visitAgain" value="no">No!</label>';
-                                    } else {
-                                        echo '<label class="form__label"><input type="radio" name="visitAgain" value="yes" '; 
-                                        if(isset($e)){if($d['visitAgain'] == 'yes'){echo 'checked';}}
-                                        echo '>Yes!</label>';
-                                        echo '<label class="form__label"><input type="radio" name="visitAgain" value="maybe" ';
-                                        if(isset($e)){if($d['visitAgain'] == 'maybe'){echo 'checked';}}
-                                        echo '>I would filp a coin...</label>';
-                                        echo '<label class="form__label"><input type="radio" name="visitAgain" value="no" ';
-                                        if(isset($e)){if($d['visitAgain'] == 'no'){echo 'checked';}}
-                                        echo '>No!</label>';
-                                    }
+                                    echo '<label class="form__label"><input type="radio" name="visitAgain" value="yes" '; 
+                                    if(isset($e) && isset($d['visitAgain'])){if($d['visitAgain'] == 'yes'){echo 'checked';}}
+                                    echo '>Yes!</label>';
+                                    echo '<label class="form__label"><input type="radio" name="visitAgain" value="maybe" ';
+                                    if(isset($e) && isset($d['visitAgain'])){if($d['visitAgain'] == 'maybe'){echo 'checked';}}
+                                    echo '>I would filp a coin...</label>';
+                                    echo '<label class="form__label"><input type="radio" name="visitAgain" value="no" ';
+                                    if(isset($e) && isset($d['visitAgain'])){if($d['visitAgain'] == 'no'){echo 'checked';}}
+                                    echo '>No!</label>';
                                 ?>
                             </div>
                         </fieldset>
