@@ -3,10 +3,10 @@
         $titleTag = 'Varsity Eatery | Terms and Conditions';
         $scripts = array();
         $message = '';
-        include('/usr/local/www/apache24/data/assets/php/include/header.php');
+        include('assets/php/include/header.php');
     ?>
     <main class="chamber">
-    	<?php include('/usr/local/www/apache24/data/assets/php/include/sidebar.php');?>
+    	<?php include('assets/php/include/sidebar.php');?>
         <article class="chamber__focal">
             <section class="showcase">
             	<h1 class="showcase__title">Privacy Policy</h1>
@@ -61,16 +61,16 @@
                     </p>
                     <h3>Children's Privacy</h3>
                     <p>
-                    Our Services do not address anyone under the age of 13. We do not knowingly collect personal identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please <a class="text-link" href="/contact.php">Contact Us</a> so that we will be able to do necessary actions.
+                    Our Services do not address anyone under the age of 13. We do not knowingly collect personal identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please <a class="text-link" href="contact.php">Contact Us</a> so that we will be able to do necessary actions.
                     </p>
                     <h3>Changes to This Privacy Policy</h3>
                     <p>
                     We may update our Privacy Policy from time to time. Thus, we advise you to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately, after they are posted on this page.
                     </p>
                     <p>
-                    <a class="text-link" href="/contact.php">Contact Us</a> if you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.
+                    <a class="text-link" href="contact.php">Contact Us</a> if you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.
                     </p>
 	            </div>
         </article>
     </main>
-    <?php include('/usr/local/www/apache24/data/assets/php/include/footer.php');?>
+    <?php include('assets/php/include/footer.php');?>

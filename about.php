@@ -3,13 +3,13 @@
         $titleTag = 'Varsity Eatery | About';
 		$scripts = array();
 		$message = 'Get to know us a little here on our about page!';
-        include('/usr/local/www/apache24/data/assets/php/include/header.php');
+        include('assets/php/include/header.php');
     ?>
     <main class="chamber">
-    	<?php include('/usr/local/www/apache24/data/assets/php/include/sidebar.php');?>
+    	<?php include('assets/php/include/sidebar.php');?>
         <article class="chamber__focal">
             <section class="showcase">
-            	<h1 class="showcase__title">About Us</h1>
+            	<h1 class="showcase__title">About us</h1>
             	<div class="content">
             		<div class="about-us">
                     	<p class="about-us__info">Charbroiled burgers, sandwiches, soups, salads, mexican food, breakfast and more! 
@@ -23,8 +23,8 @@
             	<div class="content">
             		<div class="about-us">
 	                    <figure class="awards">
-	                        <img class="awards__img" src="/images/about-page/oc-award-excellence-2017.jpg" alt="Orange County's 2017 award of excellence">
-	                        <img class="awards__img" src="/images/about-page/oc-award-excellence-2018.jpg" alt="Orange County's 2018 award of excellence">
+	                        <img class="awards__img" src="images/about-page/oc-award-excellence-2017.jpg" alt="Orange County's 2017 award of excellence">
+	                        <img class="awards__img" src="images/about-page/oc-award-excellence-2018.jpg" alt="Orange County's 2018 award of excellence">
 	                        <figcaption class="awards__caption">Our Award of Excellence (that we've earned twice!) shows that our eatery meets the expectations of our county and our industry.</figcaption>
 	                    </figure>
 	                </div>
@@ -35,10 +35,10 @@
             	<div class="content">
             		<div class="about-us">
 	                    <figure class="certificates">
-	                        <img class="certificates__img" src="/images/about-page/certificates/food-safety-manager.JPG" alt="First Food Safety Manager certification">
-	                        <img class="certificates__img" src="/images/about-page/certificates/food-safety-manager2.JPG" alt="Second Food Safety Manager certification">
-	                        <img class="certificates__img" src="/images/about-page/certificates/certified-professional-food-manager.JPG" alt="Certified professional food manager certification">
-	                        <img class="certificates__img" src="/images/about-page/certificates/servsafe-certification.JPG" alt="Serv Safe Certification">
+	                        <img class="certificates__img" src="images/about-page/certificates/food-safety-manager.JPG" alt="First Food Safety Manager certification">
+	                        <img class="certificates__img" src="images/about-page/certificates/food-safety-manager2.JPG" alt="Second Food Safety Manager certification">
+	                        <img class="certificates__img" src="images/about-page/certificates/certified-professional-food-manager.JPG" alt="Certified professional food manager certification">
+	                        <img class="certificates__img" src="images/about-page/certificates/servsafe-certification.JPG" alt="Serv Safe Certification">
 	                        <figcaption class="certificates__caption">Our staff members have more then enough certified professional food managers so that you feel comfortable entering and eating with us.</figcaption>
 	                    </figure>
                 	</div>
@@ -49,8 +49,8 @@
             	<div class="content">
             		<div class="about-us">
 		                <figure class="community">
-	                        <img class="community__img" src="/images/about-page/downtown-anaheim-association-logo.jpg" alt="Downtown Anaheim Association logo">
-	                        <img class="community__img" src="/images/about-page/anaheim-community-service.jpg" alt="Anaheim Community Service banner">
+	                        <img class="community__img" src="images/about-page/downtown-anaheim-association-logo.jpg" alt="Downtown Anaheim Association logo">
+	                        <img class="community__img" src="images/about-page/anaheim-community-service.jpg" alt="Anaheim Community Service banner">
 	                        <figcaption class="community__caption">We continually take part of Anaheim's community services because sometimes we feel like we can do much more then provide food, we want to give back to the community to help others and this Anaheim's needs. We are also a proud member of the Downtown Anaheim Association so keep an eye out for us!</figcaption>
 	                    </figure>
 	                </div>
@@ -65,4 +65,4 @@
             </section>
         </article>
     </main>
-    <?php include('/usr/local/www/apache24/data/assets/php/include/footer.php');?>
+    <?php include('assets/php/include/footer.php');?>

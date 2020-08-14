@@ -3,17 +3,17 @@
         $titleTag = 'Varsity Eatery | Home';
 		$scripts = array();
 		$message = 'Welcome to Varsity\'s Eatery Homepage! Feel free to check out our menu or learn more about us!';
-        include('/usr/local/www/apache24/data/assets/php/include/header.php');
+        include('assets/php/include/header.php');
     ?>
     <main class="chamber">
-    	<?php include('/usr/local/www/apache24/data/assets/php/include/sidebar.php');?>
+    	<?php include('assets/php/include/sidebar.php');?>
         <article class="chamber__focal">
             <section class="showcase">
 				<h1 class="showcase__title">Home</h1>
             	<div class="content">
 	                <ul class="grid">
 	                    <li class="tile tile__featured-foods">
-							<a class="tile__link" href="/menu.php?category=Charbroiled+Burgers">
+							<a class="tile__link" href="menu.php?category=Charbroiled+Burgers">
 								<div class="caption">
 									<h4 class="caption__title">Hamburger</h4><br>
 									<p class="caption__info">Charbroiled Burger menu</p>
@@ -22,7 +22,7 @@
 	                    	</a>
 	                    </li>
 	                    <li class="tile tile__featured-foods">
-	                    	<a class="tile__link" href="/menu.php?category=Mexican+Food">
+	                    	<a class="tile__link" href="menu.php?category=Mexican+Food">
 								<div class="caption">
 									<h4 class="caption__title">Quesadilla</h4><br>
 									<p class="caption__info">Mexican Food menu</p>
@@ -31,7 +31,7 @@
 	                    	</a>
 	                    </li>
 	                    <li class="tile tile__featured-foods">
-	                    	<a class="tile__link" href="/menu.php?category=Salads">
+	                    	<a class="tile__link" href="menu.php?category=Salads">
 								<div class="caption">
 									<h4 class="caption__title">Vegetable Salad</h4><br>
 									<p class="caption__info">Salad menu</p>
@@ -40,7 +40,7 @@
 		                    </a>
 	                    </li>
 	                    <li class="tile tile__featured-foods">
-	                    	<a class="tile__link" href="/menu.php?category=Sides">
+	                    	<a class="tile__link" href="menu.php?category=Sides">
 								<div class="caption">
 									<h4 class="caption__title">French Fries</h4><br>
 									<p class="caption__info">Sides menu</p>
@@ -49,7 +49,7 @@
 		                    </a>
 	                    </li>
 	                    <li class="tile tile__featured-foods">
-	                    	<a class="tile__link" href="/menu.php?category=Breakfast">
+	                    	<a class="tile__link" href="menu.php?category=Breakfast">
 								<div class="caption">
 									<h4 class="caption__title">Pancakes</h4><br>
 									<p class="caption__info">Breakfast menu</p>
@@ -58,7 +58,7 @@
 		                    </a>
 	                    </li>
 	                    <li class="tile tile__featured-foods">
-	                    	<a class="tile__link" href="/menu.php?category=Other+Foods">
+	                    	<a class="tile__link" href="menu.php?category=Other+Foods">
 								<div class="caption">
 									<h4 class="caption__title">Pasta</h4><br>
 									<p class="caption__info">Other Foods menu</p>
@@ -84,4 +84,4 @@
         	</section>
         </article>
     </main>
-    <?php include('/usr/local/www/apache24/data/assets/php/include/footer.php');?>
+    <?php include('assets/php/include/footer.php');?>

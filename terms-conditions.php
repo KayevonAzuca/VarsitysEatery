@@ -4,10 +4,10 @@
         $scripts = array();
         $message = '';
         $h1Tag = 'Terms and Conditions';
-        include('/usr/local/www/apache24/data/assets/php/include/header.php');
+        include('assets/php/include/header.php');
     ?>
     <main class="chamber">
-    	<?php include('/usr/local/www/apache24/data/assets/php/include/sidebar.php');?>
+    	<?php include('assets/php/include/sidebar.php');?>
         <article class="chamber__focal">
             <section class="showcase">
             	<h1 class="showcase__title">Terms and Conditions</h1>
@@ -125,7 +125,7 @@
                     We reserve the right to request that you remove all links or any particular link to our Website. You approve to immediately remove all links to our Website upon request. We also reserve the right to amen these terms and conditions and it's linking policy at any time. By continuously linking to our Website, you agree to be bound to and follow these linking terms and conditions.
                     <h3>Removal of links from our website</h3>
                     <p>
-                    If you find any link on our Website that is offensive for any reason, you are free to <a class="text-link" href="/contact.php">Contact Us</a> and inform us at any moment. We will consider requests to remove links but we are not obligated to or so or to respond to you directly.
+                    If you find any link on our Website that is offensive for any reason, you are free to <a class="text-link" href="contact.php">Contact Us</a> and inform us at any moment. We will consider requests to remove links but we are not obligated to or so or to respond to you directly.
                     </p>
                     <p>
                     We do not ensure that the information on this website is correct, we do not warrant its completeness or accuracy; nor do we promise to ensure that the website remains available or that the material on the website is kept up to date.
@@ -150,4 +150,4 @@
             </section>
         </article>
     </main>
-    <?php include('/usr/local/www/apache24/data/assets/php/include/footer.php');?>
+    <?php include('assets/php/include/footer.php');?>

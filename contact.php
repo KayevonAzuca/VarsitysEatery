@@ -1,12 +1,12 @@
     <?php 
         $page = 'contact';
         $titleTag = 'Varsity Eatery | Contact';
-        $scripts = array('/assets/js/contactUs.js');
+        $scripts = array('assets/js/contactUs.js');
         $message = 'Questions, compliments, or concerns? Contact us by filling out the form below.';
-        include('/usr/local/www/apache24/data/assets/php/include/header.php');
+        include('assets/php/include/header.php');
     ?>
     <main class="chamber">
-        <?php include('/usr/local/www/apache24/data/assets/php/include/sidebar.php');?>
+        <?php include('assets/php/include/sidebar.php');?>
         <article class="chamber__focal">
             <section class="showcase">
                 <h1 class="showcase__title">Contact us</h1>
@@ -22,26 +22,26 @@
                             $d = $_GET['uIn'];
                         }
                     ?>
-                    <form class="form" id="contactForm" action="/validateForm.php" method="POST">
+                    <form class="form" id="contactForm" action="validateForm.php" method="POST">
                         <fieldset class="form__personal">
                             <legend class="form__legend">Personal Information</legend>
                             <label class="form__label"><span class="form__question">Name:</span><br>
                             <?php
                                 if(isset($e)){
-                                    if(in_array('noName', $e)) {
-                                        echo '<input class="form__name critical-background" type="text" name="name" id="name" maxlength="18" size="18" placeholder=" John" value="">';
+                                    if(in_array('nofName', $e)) {
+                                        echo '<input class="form__name critical-background" type="text" name="fName" maxlength="18" size="18" placeholder=" John" value="">';
                                         echo '<p class="critical-text">*Please enter a name.</p>';
-                                    } elseif(in_array('notName', $e)) {
-                                        echo '<input class="form__name critical-background" type="text" name="name" id="name" maxlength="18" size="18" placeholder=" John" value="' . $d['name'] . '">';
+                                    } elseif(in_array('notfName', $e)) {
+                                        echo '<input class="form__name critical-background" type="text" name="fName" maxlength="18" size="18" placeholder=" John" value="' . $d['fName'] . '">';
                                         echo '<p class="critical-text">*Don\'t use numbers or special characters</p>';
-                                    } elseif(in_array('lenName', $e)) {
-                                        echo '<input class="form__name critical-background" type="text" name="name" id="name" maxlength="18" size="18" placeholder=" John" value="">';
+                                    } elseif(in_array('lenfName', $e)) {
+                                        echo '<input class="form__name critical-background" type="text" name="fName" maxlength="18" size="18" placeholder=" John" value="">';
                                         echo '<p class="critical-text">*Name is too long.</p>';
                                     } else {
-                                        echo '<input class="form__name" type="text" name="name" id="name" maxlength="18" size="18" placeholder=" John" value="' . $d['name'] . '">';
+                                        echo '<input class="form__name" type="text" name="fName" maxlength="18" size="18" placeholder=" John" value="' . $d['fName'] . '">';
                                     }
                                 } else {
-                                    echo '<input class="form__name" type="text" name="name" id="name" maxlength="18" size="18" placeholder=" John" value="">';
+                                    echo '<input class="form__name" type="text" name="fName" maxlength="18" size="18" placeholder=" John" value="">';
                                 }
                             ?>
                             </label>
@@ -147,7 +147,7 @@
                                 <label class="form__label"><input type="radio" name="visitAgain" value="no" <?php if(isset($e)){if($d['visitAgain'] == 'no'){echo 'checked';}}?>>No!</label>
                             </div>
                         </fieldset>
-                        <?php include('/usr/local/www/apache24/data/assets/php/include/contact/favEateryCategory.php');?>
+                        <?php include('assets/php/include/contact/favEateryCategory.php');?>
                         <fieldset class="form__btn">
                             <input class="form__clear" name="reset" type="reset" value="Clear">
                             <input class="form__submit" name="submit" type="submit" value="Submit">
@@ -168,4 +168,4 @@
             </section>
         </article>
     </main>
-    <?php include('/usr/local/www/apache24/data/assets/php/include/footer.php');?>
+    <?php include('assets/php/include/footer.php');?>

@@ -6,5 +6,9 @@
     "title": {
         "override": true,
         "data": "Varsity's Eatery"
+    },
+    "apis": {
+        "override": true,
+        "data": ["Google Maps API"]
     }
 }
