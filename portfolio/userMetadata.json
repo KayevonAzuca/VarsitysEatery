@@ -10,5 +10,46 @@
     "apis": {
         "override": true,
         "data": ["Google Maps API"]
-    }
+    },
+	"images": {
+		"override": true,
+		"data": [
+            {
+				"alt_text": "Home page",
+				"path": "/portfolio/images/homepage-1383x811.jpeg"
+			},
+			{
+				"alt_text": "Menu page",
+				"path": "/portfolio/images/menupage.jpeg"
+			},
+			{
+				"alt_text": "Burger menu",
+				"path": "/portfolio/images/burgers-menu.jpeg"
+			},
+			{
+				"alt_text": "Sides menu",
+				"path": "/portfolio/images/sides-menu.jpeg"
+			},
+			{
+				"alt_text": "Breakfast menu",
+				"path": "/portfolio/images/breakfast-menu.jpeg"
+			},
+            {
+				"alt_text": "Sandwiches menu",
+				"path": "/portfolio/images/sandwiches-menu.jpeg"
+			},
+            {
+				"alt_text": "Mexican food menu",
+				"path": "/portfolio/images/mexican-food-menu.jpeg"
+			},
+			{
+				"alt_text": "About page",
+				"path": "/portfolio/images/aboutpage.jpeg"
+			},
+			{
+				"alt_text": "Contact page",
+				"path": "/portfolio/images/contactpage.jpeg"
+			}
+		]
+	}
 }
