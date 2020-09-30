@@ -29,13 +29,10 @@ function displayDefaultPage(menu){
 
 //Display the menu categories using the menu.json categories.
 function displayMenuCategories(menu){
-    document.getElementById('menuNav').innerHTML = `
-        <ul class="menu__list">
+    document.getElementById('menuNav').innerHTML = `<ul class="menu__list">
             ${
                 menu.map(function(categories){
-                    return `<li class="menu__category">
-                                ${categories.category}
-                            </li>`
+                    return `<li class="menu__category">${categories.category}</li>`
                 }).join('')
             }
         </ul>`;
@@ -53,8 +50,9 @@ function addCategoryEvent(menu){
 
 //Display category info, title, and food items
 function displayCategoryData(clickedCategory, menu){
+    let clickedCat = clickedCategory.trim();
     for(let i = 0; i < menu.length; i++){
-        if(menu[i].category === clickedCategory){
+        if(menu[i].category === clickedCat){
             //Highlight clicked category while removing potential previous highlighted category
             let menuCategories = document.getElementsByClassName('menu__category');
             for(let k = 0; k < menuCategories.length; k++){
@@ -76,15 +74,12 @@ function displayCategoryData(clickedCategory, menu){
                 `<ul class="category__list">
                 ${
                     menu[i].items.map(function(item){
-                        return `
-                            <li class="category__item">
-                                <img class="category__img" src="${item.imgPath}" alt="${item.alt}">
-                                <div class="category__details">
-                                <h3 class="category__title">${item.name}</h3>
-                                <p class="category__description">${item.description}</p>
-                                <span class="category__price">$${formatPrice(item.price)}</span>
-                                </div>
-                            </li>`
+                        return `<li class="category__item">
+<img class="category__img" src="${item.imgPath}" alt="${item.alt}"><div class="category__details">
+<h3 class="category__title">${item.name}</h3>
+<p class="category__description">${item.description}</p>
+<span class="category__price">$${formatPrice(item.price)}</span>
+</div></li>`
                     }).join('')
                 }
                 </ul>`
