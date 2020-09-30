@@ -3,6 +3,10 @@
         "override": true,
         "data": "Web Development"
     },
+    "precedence":{
+        "override": true,
+        "data": "high"
+    },
     "title": {
         "override": true,
         "data": "Varsity's Eatery"
