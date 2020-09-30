@@ -25,7 +25,7 @@
                     <form class="form" id="contactForm" action="validateForm.php" method="POST">
                         <fieldset class="form__personal">
                             <legend class="form__legend">Personal Information</legend>
-                            <label class="form__label"><span class="form__question">Name:</span><br>
+                            <label class="form__label"><span class="form__question">Name:</span>
                             <?php
                                 if(isset($e)){
                                     if(in_array('nofName', $e)) {
@@ -45,7 +45,7 @@
                                 }
                             ?>
                             </label>
-                            <label class="form__label"><span class="form__question">Email:</span><br>
+                            <label class="form__label"><span class="form__question">Email:</span>
                             <?php
                                 if(isset($e)){
                                     if(in_array('noEmail', $e)) {
@@ -62,7 +62,7 @@
                                 }
                             ?>
                             </label>
-                            <label class="form__label"><span class="form__question">Phone number:</span><br>
+                            <label class="form__label"><span class="form__question">Phone number:</span>
                             <?php
                                 if(isset($e)){
                                     if(in_array('notPhNum', $e)){
@@ -83,7 +83,7 @@
                                 }
                             ?>
                             </label>
-                            <label class="form__label"><span class="form__question">Personal favorite food:</span><br>
+                            <label class="form__label"><span class="form__question">Personal favorite food:</span>
                             <?php
                                 if(isset($e)){
                                     if(in_array('notFood', $e)){
@@ -108,7 +108,7 @@
                         <fieldset class="form__feedback">
                             <legend class="form__legend">Feedback</legend>
                             <label class="form__label">
-                                <span class="form__question">Your message:</span><br>
+                                <span class="form__question">Your message:</span>
                             <?php
                                 if(isset($e)){
                                     if(in_array('noCustMessage', $e)){

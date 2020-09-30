@@ -446,6 +446,9 @@ input {
 	border: 2px solid #000
 }
 /******************** Contact page ********************/
+.form {
+	width: 100%;
+}
 .form__personal, .form__feedback, .form__additional {
 	display: flex;
 	flex-direction: row;
@@ -463,6 +466,18 @@ input {
 }
 .form__label {
 	font-size: 0.9em;
+}
+.form__personal .form__label {
+	display: flex;
+	flex-flow: column wrap;
+}
+.form__feedback .form__label {
+	display: flex;
+	flex-flow: column wrap;
+}
+.form__feedback .form__radio .form__label {
+	display: flex;
+	flex-flow: row wrap;
 }
 .form__question {
 	flex: 0 0 95%;
