@@ -16,7 +16,7 @@
                     Welcome to Varsity's Eatery!
                     </p>
                     <p>
-                    These terms and conditions outline the rules and regulations for the use of Company Name's Website, located at Website.com.
+                    These terms and conditions outline the rules and regulations for the use of Varsity's Eatery's Website.
                     </p>
                     <p>
                     By accessing this website we assume you accept these terms and conditions. Do not continue to use Varsity's Eatery if you do not agree to take all of the terms and conditions stated on this page.

@@ -12,7 +12,7 @@
             	<h1 class="showcase__title">Privacy Policy</h1>
             	<div class="content doc">
                     <p>
-                    Varsity's Eatery operates the www.varsityseatery.com website, which provides the SERVICE.
+                    Varsity's Eatery operates the varsityseatery website, which provides the SERVICE.
                     </p>
                     <p>
                     This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service, the Website Name website.

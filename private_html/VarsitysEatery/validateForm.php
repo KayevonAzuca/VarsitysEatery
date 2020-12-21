@@ -1,6 +1,5 @@
 <?php
     // Clean input from potential whitespace, quotes, &/or malicious code
-    // https://www.w3schools.com/php/php_form_validation.asp
     function cleanInput($data) {
         $data = trim($data);
         $data = stripslashes($data);
