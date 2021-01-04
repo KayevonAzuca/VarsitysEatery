@@ -3,7 +3,7 @@
 		<span class="alcove__item"><a class="alcove__link" href="private-policy.php">Privacy Policy</a>&ensp;|</span>
     	<span class="alcove__item">Developer: Kayevon |</span>
     	<span class="alcove__item">Published: January 31, 2020 |</span>
-    	<span class="alcove__item">Page Last Modified: January 16, 2020 |</span>
+    	<span class="alcove__item">Page Last Modified: January 3, 2021 |</span>
     	<span class="alcove__item">Varsity's Eatery</span>
 	</footer>
 </body>
