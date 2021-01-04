@@ -3,10 +3,10 @@
         $titleTag = 'Varsity Eatery | Menu';
         $scripts = array('assets/js/menu.js');
         $message = 'This is our current Menu at our eatery! Feel free to check out our menu or learn more about us!';
-        include('assets/php/include/header.php');
+        include_once('assets/php/include/header.inc.php');
     ?>
     <main class="chamber">
-    	<?php include('assets/php/include/sidebar.php');?>
+    	<?php include_once('assets/php/include/sidebar.inc.php');?>
         <article class="chamber__focal">
             <section class="showcase">
                 <h1 class="showcase__title">Menu</h1>
@@ -34,4 +34,4 @@
         	</section>
         </article>
     </main>
-    <?php include('assets/php/include/footer.php');?>
+    <?php include_once('assets/php/include/footer.inc.php');?>

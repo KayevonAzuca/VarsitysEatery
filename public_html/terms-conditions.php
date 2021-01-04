@@ -4,10 +4,10 @@
         $scripts = array();
         $message = '';
         $h1Tag = 'Terms and Conditions';
-        include('assets/php/include/header.php');
+        include_once('assets/php/include/header.inc.php');
     ?>
     <main class="chamber">
-    	<?php include('assets/php/include/sidebar.php');?>
+    	<?php include_once('assets/php/include/sidebar.inc.php');?>
         <article class="chamber__focal">
             <section class="showcase">
             	<h1 class="showcase__title">Terms and Conditions</h1>
@@ -150,4 +150,4 @@
             </section>
         </article>
     </main>
-    <?php include('assets/php/include/footer.php');?>
+    <?php include_once('assets/php/include/footer.inc.php');?>
