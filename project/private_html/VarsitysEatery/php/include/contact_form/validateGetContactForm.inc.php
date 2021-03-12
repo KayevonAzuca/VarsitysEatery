@@ -102,7 +102,7 @@
     header('Content-Type: application/json');
 
     // Get & load the class auto loader
-    $autoLoaderFullPath = $_SERVER['DOCUMENT_ROOT'] . '/../private_html/php/include/autoloader.inc.php';
+    $autoLoaderFullPath = $_SERVER['DOCUMENT_ROOT'] . '/../private_html/VarsitysEatery/php/include/autoloader.inc.php';
     if(file_exists($autoLoaderFullPath)){
       include_once($autoLoaderFullPath);
     } else {

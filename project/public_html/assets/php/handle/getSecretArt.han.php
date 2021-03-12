@@ -12,7 +12,7 @@
 
   try {
     $getSecretArtHan = TRUE;
-    include_once(realpath($_SERVER['DOCUMENT_ROOT'] . '/../protected_html/php/include/getSecretArt.inc.php'));
+    include_once(realpath($_SERVER['DOCUMENT_ROOT'] . '/../protected_html/VarsitysEatery/php/include/getSecretArt.inc.php'));
   } catch (Exception $e) {
     exit();
   }

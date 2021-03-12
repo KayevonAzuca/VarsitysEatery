@@ -1,21 +1,10 @@
 <?php
   // ==========================================================================
-  // file: getSecretArt.inc.php
+  // file: getMenu.inc.php
   // ==========================================================================
   // Developer: Kayevon Azuca
   // Date: 1/4/2021
-  // Description: 
-  // ==========================================================================
-
-  // ==== Script Execution Check ==============================================
-  //
-  // Hard-coded script execution toggle.
-  //
-  // ==========================================================================
-
-  if(FALSE){exit();}
-
-  // ==== End of Script Execution Check =======================================
+  // Description: Load and echo the menu.json file
   // ==========================================================================
 
   // ==== Script Include Check ================================================
@@ -26,11 +15,11 @@
   //
   // ==========================================================================
 
-  if(!isset($getSecretArtHan) || !$getSecretArtHan) {
+  if(!isset($getMenuHan) || !$getMenuHan) {
     throw new Exception('Script Include Check: Could not find handler variable');
   }
 
-  unset($getSecretArtHan);
+  unset($getMenuHan);
 
   // ==== End of Script Include Check =========================================
   // ==========================================================================
@@ -38,14 +27,16 @@
   // ==== Main Execution ======================================================
   // ==========================================================================
 
-  header("Content-Type: image/jpeg");
-  $pic = file_get_contents(realpath($_SERVER['DOCUMENT_ROOT'] . '/../protected_html/images/secretArt.png'));
-  if($pic){
-    echo($pic);
+  header('Content-Type: application/json');
+
+  // Get JSON food menu & echo its contents
+  $menuFullPath = realpath($_SERVER['DOCUMENT_ROOT'] . '/../protected_html/VarsitysEatery/json/menu.json');
+  if(file_exists($menuFullPath)){
+    $menuJSON = file_get_contents($menuFullPath, TRUE);
+    echo($menuJSON);
   } else {
-    throw new Exception('Main Execution: No secret found');
+    throw new Exception('Script Setup: JSON menu file not found');
   }
 
   // ==== End of Main Execution ===============================================
   // ==========================================================================
-?>

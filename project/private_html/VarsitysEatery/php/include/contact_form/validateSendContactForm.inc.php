@@ -110,7 +110,7 @@
     header('Content-Type: application/json');
 
     // Get & load the class auto loader
-    $autoLoaderFullPath = realpath($_SERVER['DOCUMENT_ROOT'] . '/../private_html/php/include/autoloader.inc.php');
+    $autoLoaderFullPath = realpath($_SERVER['DOCUMENT_ROOT'] . '/../private_html/VarsitysEatery/php/include/autoloader.inc.php');
     if(file_exists($autoLoaderFullPath)){
       include_once($autoLoaderFullPath);
     } else {
@@ -119,7 +119,7 @@
     unset($autoLoaderFullPath);
 
     // Get JSON food menu
-    $menuFullPath = realpath($_SERVER['DOCUMENT_ROOT'] . '/../protected_html/json/menu.json');
+    $menuFullPath = realpath($_SERVER['DOCUMENT_ROOT'] . '/../protected_html/VarsitysEatery/json/menu.json');
     if(file_exists($menuFullPath)){
       $JSONMenuCategories = array_keys(json_decode(file_get_contents($menuFullPath), TRUE));
     } else {

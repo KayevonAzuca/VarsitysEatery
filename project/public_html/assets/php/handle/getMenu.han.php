@@ -23,7 +23,7 @@
 
   try {
     $getMenuHan = TRUE;
-    $includeFullPath = realpath($_SERVER['DOCUMENT_ROOT'] . '/../protected_html/php/include/getMenu.inc.php');
+    $includeFullPath = realpath($_SERVER['DOCUMENT_ROOT'] . '/../protected_html/VarsitysEatery/php/include/getMenu.inc.php');
     if(file_exists($includeFullPath)){
       include_once($includeFullPath);
     } else {

@@ -20,7 +20,7 @@
   //   FALSE        -- the class file does not exist
   // ==========================================================================
   function autoloadClass($className) {
-    $path = $_SERVER['DOCUMENT_ROOT'] . "/../private_html/php/classes/";
+    $path = $_SERVER['DOCUMENT_ROOT'] . "/../private_html/VarsitysEatery/php/classes/";
     $ext = ".class.php";
     $fullPath = realpath($path . $className . $ext);
 

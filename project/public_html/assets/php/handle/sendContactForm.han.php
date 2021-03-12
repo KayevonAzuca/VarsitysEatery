@@ -25,7 +25,7 @@
   try {
     if(isset($_POST['jsSendValid']) && $_POST['url'] === ''){
       $sendContactFormHan = TRUE;
-      $includeFullPath = realpath($_SERVER['DOCUMENT_ROOT'] . '/../protected_html/php/include/contact_form/sendContactForm.inc.php');
+      $includeFullPath = realpath($_SERVER['DOCUMENT_ROOT'] . '/../protected_html/VarsitysEatery/php/include/contact_form/sendContactForm.inc.php');
       if(file_exists($includeFullPath)){
         include_once($includeFullPath);
       } else {
