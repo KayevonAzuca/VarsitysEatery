@@ -65,7 +65,7 @@
     // and save it in the "FoodMenu" module
     let menuCat = await FoodMenu.mkMenuCat(menuObj);
     if(!menuCat){return;}
-    SessionStorage.setSeSt("menuCat", cat);
+    SessionStorage.setSeSt("menuCat", menuCat);
     FoodMenu.modSetMenuCat(menuCat);
   }
 
