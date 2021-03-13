@@ -5,22 +5,27 @@
   },
   "precedence":{
     "override": true,
-    "data": "high"
+    "data": 3
   },
   "title": {
     "override": true,
     "data": "Varsity's Eatery"
 	},
 	"languages": {
-		"override": true,
+		"override": false,
 		"data": {
-			"primary": ["PHP"],
-			"secondary": ["HTML","CSS","JS"]
+      "JavaScript": 10,
+      "HTML": 9,
+      "CSS": 8,
+      "PHP": 7
 		}
 	},
-  "apis": {
+  "resources": {
     "override": true,
-    "data": ["Google Maps API"]
+    "data": {
+      "apis": ["Internal API"],
+      "storage": ["Session Storage", "JSON", "mySQL"]
+    }
   },
 	"images": {
 		"override": true,
