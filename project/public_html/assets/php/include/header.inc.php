@@ -1,5 +1,5 @@
 <?php
-  // Toggle this to change the type of environmnet
+  // Toggle this to change the type of environmnet being used
   define('DEBUG', FALSE);
   error_reporting(E_ALL);
 
@@ -10,7 +10,6 @@
     ini_set('display_errors', 0);
     ini_set('log_errors', 1);
   }
-  echo($asdf);
 ?>
 <!doctype html>
 <html>
