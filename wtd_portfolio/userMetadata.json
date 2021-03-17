@@ -1,7 +1,8 @@
 {
   "category": {
       "override": true,
-      "data": "Web Development"
+      "data": "Web Development",
+      "indexFile": "index.php"
   },
   "precedence":{
     "override": true,
