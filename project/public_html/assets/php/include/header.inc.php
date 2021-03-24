@@ -1,5 +1,5 @@
 <?php
-  // Toggle this to change the type of environmnet being used
+  // Toggle this to change the type of environment being used
   define('DEBUG', FALSE);
   error_reporting(E_ALL);
 

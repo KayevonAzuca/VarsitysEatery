@@ -34,45 +34,45 @@
 			"desktop": [
 				{
 					"imgAlt": "Home page",
-					"imgPath": "/images/wtd_portfolio/desktop/home-page.jpeg"
+					"imgPath": "/images/wtd_portfolio/images/desktop/home-page.jpeg"
 				},
 				{
 					"imgAlt": "Menu page",
-					"imgPath": "/images/wtd_portfolio/desktop/menu-page.jpeg"
+					"imgPath": "/images/wtd_portfolio/images/desktop/menu-page.jpeg"
 				},
 				{
 					"imgAlt": "Breakfast menu",
-					"imgPath": "/images/wtd_portfolio/desktop/breakfast-menu.jpeg"
+					"imgPath": "/images/wtd_portfolio/images/desktop/breakfast-menu.jpeg"
 				},
 				{
 					"imgAlt": "Sandwiches menu",
-					"imgPath": "/images/wtd_portfolio/desktop/sandwiches-menu.jpeg"
+					"imgPath": "/images/wtd_portfolio/images/desktop/sandwiches-menu.jpeg"
 				},
 				{
 					"imgAlt": "Contact page",
-					"imgPath": "/images/wtd_portfolio/desktop/contact-page.jpeg"
+					"imgPath": "/images/wtd_portfolio/images/desktop/contact-page.jpeg"
 				}
 			],
 			"phone": [
 				{
 					"imgAlt": "Home page",
-					"imgPath": "/images/wtd_portfolio/phone/home-page.jpeg"
+					"imgPath": "/images/wtd_portfolio/images/phone/home-page.jpeg"
 				},
 				{
 					"imgAlt": "Menu page",
-					"imgPath": "/images/wtd_portfolio/phone/menu-page.jpeg"
+					"imgPath": "/images/wtd_portfolio/images/phone/menu-page.jpeg"
 				},
 				{
 					"imgAlt": "Breakfast menu",
-					"imgPath": "/images/wtd_portfolio/phone/breakfast-menu.jpeg"
+					"imgPath": "/images/wtd_portfolio/images/phone/breakfast-menu.jpeg"
 				},
 				{
 					"imgAlt": "Sandwiches menu",
-					"imgPath": "/images/wtd_portfolio/phone/sandwiches-menu.jpeg"
+					"imgPath": "/images/wtd_portfolio/images/phone/sandwiches-menu.jpeg"
 				},
 				{
 					"imgAlt": "Contact page",
-					"imgPath": "/images/wtd_portfolio/phone/contact-page.jpeg"
+					"imgPath": "/images/wtd_portfolio/images/phone/contact-page.jpeg"
 				}
 			]
 		}

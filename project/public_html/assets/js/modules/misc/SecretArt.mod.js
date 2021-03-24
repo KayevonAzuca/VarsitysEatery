@@ -66,7 +66,7 @@ export function isResFlag(){
 // ============================================================================
 export async function getSecretArt(){
   try {
-    let res = await fetch("assets/php/handle/getSecretArt.han.php");
+    let res = await fetch("/assets/php/handle/VarsitysEatery/getSecretArt.han.php");
 
     if(res.status !== 200){
       throw new Error("Server response error");

@@ -480,7 +480,7 @@ export function formatFormData(formEl){
 // ============================================================================
 export async function submitForm(formattedFormData){
   try {
-    let res = await fetch('/assets/php/handle/sendContactForm.han.php', {
+    let res = await fetch('/assets/php/handle/VarsitysEatery/sendContactForm.han.php', {
       method: 'POST',
       body: formattedFormData,
       headers: {
@@ -492,7 +492,7 @@ export async function submitForm(formattedFormData){
       throw new Error("Server response error");
     }
 
-    // console.log(res.text());
+    console.log(res.text());
     return res.json();
 
   } catch(err) {

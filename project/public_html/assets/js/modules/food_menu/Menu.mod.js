@@ -59,7 +59,7 @@ export async function initMenu(initEL){
 // ============================================================================
 export async function fetchMenu() {
   try {
-    let res = await fetch('/assets/php/handle/getMenu.han.php', {
+    let res = await fetch("/assets/php/handle/VarsitysEatery/getMenu.han.php", {
       method: 'GET',
       headers: {
         "Accept": "application/json"
