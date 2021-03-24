@@ -492,7 +492,7 @@ export async function submitForm(formattedFormData){
       throw new Error("Server response error");
     }
 
-    console.log(res.text());
+    // console.log(res.text());
     return res.json();
 
   } catch(err) {
