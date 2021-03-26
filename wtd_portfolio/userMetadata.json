@@ -28,6 +28,15 @@
       "storage": ["Session Storage", "JSON", "mySQL"]
     }
   },
+  "urls": {
+		"override": true,
+		"data": {
+      "liveURL": false,
+      "docsURL": {
+        "techDesignDoc": "/Architechtural Design Documents/Technical_Design_Document.pdf"
+      }
+    }
+  },
 	"images": {
 		"override": true,
 		"data": {
